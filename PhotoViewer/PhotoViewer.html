@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="code.js" defer></script>
+    <title>Photo Viewer</title>
+</head>
+
+<body>
+    <div id="outerborder">
+
+        <h1> <u> Photo Viewer </u></h1>
+
+        <img id="displayimage" src="InitialImage.jpg" alt="initialImg" onclick="nextphoto()">
+
+
+        <div class="form-content">
+<form id="form">
+            <div id="status-form">
+
+                <fieldset>
+                    <legend> Status </legend>
+                    <label for="currphoto">Photo Being Displayed:</label>
+                    <input type="text" name="currphoto" id="currphoto" disabled>
+
+                    <p id="statusfieldset"> </p>
+
+                </fieldset>
+
+            </div>
+</form>
+            <div id="loadlocal-form">
+
+                <fieldset>
+                    <legend> Loading Images (Local Folder) </legend>
+
+                    <label for="photofolder">Photo's Folder:</label>
+                    <input type="text" name="photofolder" id="photofolder">
+
+                    <label for="commonname">Common Name:</label>
+                    <input type="text" name="commonname" id="commonname">
+
+                    <div id="loadlocal2ndrow">
+                        <label for="startnum">Start Photo Number:</label>
+                        <input type="text" name="startnum" id="startnum">
+
+                        <label for="endnum">End Photo Number:</label>
+                        <input type="text" name="endnum" id="endnum">
+                    </div>
+
+                    <input type="submit" value="Load Photos" onclick="loadphoto()">
+
+                </fieldset>
+
+            </div>
+
+
+            <div id="loadjson-form">
+                <fieldset>
+                    <legend> Loading Images (JSON File) </legend>
+
+                    <label for="url">URL:</label>
+                    <input type="text" name="url" id="url">
+
+                    <input type="submit" value="Load JSON" id="jsonfile" onclick="loadjson()">
+
+                </fieldset>
+            </div>
+
+
+            <div id="iterating-form">
+                <fieldset>
+
+                    <legend> Iterating </legend>
+
+                    <input type="submit" value="Previous Photo" onclick="prevphoto()">
+                    <input type="submit" value="Next Photo" onclick="nextphoto()">
+                    <input type="submit" value="First Photo" onclick="firstphoto()">
+                    <input type="submit" value="Last Photo" onclick="lastphoto()">
+
+                </fieldset>
+            </div>
+            <div id="slideshow-form">
+                <fieldset>
+                    <legend> Slideshows </legend>
+
+                    <input type="submit" value="SlideShow" onclick="slideshow()">
+                    <input type="submit" value="RandomSlideShow" onclick="rslideshow()">
+                    <input type="submit" value="StopSlideShow" onclick="sslideshow()">
+
+                </fieldset>
+            </div>
+            <hr>
+
+            <input type="reset" value="Reset Form Values" onclick="resetf()">
+
+    
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>

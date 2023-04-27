@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>File Loading</title>
+  </head>
+
+  <body>
+    <div>
+      Choose file to upload <input type="file" id="fileElement">
+      <pre id="displayArea"></pre>
+    </div>
+
+    <script>
+      "use strict";
+
+      document.getElementById("fileElement").onchange = loadData;
+
+      function loadData() {
+        let filename = document.getElementById("fileElement").files[0];
+
+        let reader = new FileReader();
+
+        /* What to do once the file has been read */
+        reader.onload = () => {
+          const img = new Image();
+          img.src = reader.result;
+          document.getElementById("displayArea").appendChild(img);
+        };
+
+        /* Reading the file (using readAsDataURL) */
+        reader.readAsDataURL(filename);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Playing Sound</title>
+</head>
+
+<body>
+    <h2>Sound Player</h2>
+    <!-- audio files available online (e.g., https://www.soundhelix.com/audio-examples) -->
+    <audio id="player">
+        <source src="toPacifyHTMLValidator" type="audio/mpeg">
+    </audio>
+
+    <strong>Enter mp3 file url </strong>
+    <input size="60" id="audioSource" type="text" value="sounds/DropBallSound.mp3"><br><br>
+    <input type="button" value="Play" onclick="playSound()">
+    <input type="button" value="Stop" onclick="stop()">
+    <script>
+        "use strict";
+
+        let player = document.getElementById("player");
+        
+        function playSound() {   
+            player.src = document.getElementById("audioSource").value;
+            player.play();
+        }
+        
+        function stop() {
+            player.pause();
+            player.currentTime = 0;
+        }
+    </script>
+</body>
+</html>

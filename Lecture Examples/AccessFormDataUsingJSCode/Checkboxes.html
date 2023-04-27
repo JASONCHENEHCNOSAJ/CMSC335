@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Checkboxes</title>
+</head>
+
+<body>
+
+ Value: <input type="text" value =4.5 id ="val">
+ <input type="button" value="Print Floor" onclick=computefloor()>
+ 
+ <br><strong>Result</strong><br>
+ <div id="display"></div>
+ <script>
+ function computeFloor() {
+	let res = Math.floor(document.querySelector("#val").value);
+	document.querySelector("#display").innerHTML = res;
+ // You must implement/complete
+ }
+</script>
+</body></html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>File Reading</title>
+</head>
+
+<body>
+    Choose file to upload <input type="file" id="fileElement">
+    <script>
+        "use strict";
+
+        document.getElementById("fileElement").onchange = loadData;
+
+        function loadData(e) {
+            let file = document.getElementById("fileElement").files[0];
+
+            let reader = new FileReader();
+
+            /* What to do once the file has been read */
+            reader.onload = function() {
+                let person = JSON.parse(reader.result);
+                console.log("%cperson's information", "color:red");
+                console.log(person);
+                alert("Check console for results");
+            };
+
+             /* Reading the file */
+            reader.readAsText(file);
+        }
+
+    </script>
+</body>
+
+</html>
