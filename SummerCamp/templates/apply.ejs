@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application</title>
+
+</head>
+<body>
+    <h1> Application </h1>
+
+    <form onsubmit="return confirm('Are you sure you want to submit your application? \nYou will not be able to change your information once submitted.')" action="http://localhost:<%= port %>/processApplication" method="post">
+        <fieldset>
+
+         <label for="name"> <b>Name: </b>  </label>
+         <input type="text" id="name" name="name">
+
+         <label for="email"><b> Email Address: </b></label>
+         <input type="email" id="email" name="email"><br><br>
+
+         <label for="gpa"> <b> GPA:</b> </label>
+         <input type="text" id="gpa" name="gpa"><br><br>
+
+         <label for="background"><b> Background Information:</b></label> <br>
+         <textarea name="background" id="background" cols="70" rows="5"></textarea>
+        </fieldset>
+        <br>
+         <input type="reset" value="Reset">
+         <input type="submit" value="Submit Application">
+       </form>
+       <hr>
+       <a href="/">HOME</a>
+       
+</body>
+</html>
